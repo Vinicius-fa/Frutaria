@@ -1,10 +1,10 @@
-package com.frutariaapp.view;
+package view;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-import com.frutariaapp.model.Fruta;
-import com.frutariaapp.model.Verdura;
+import model.Fruta;
+import model.Verdura;
 
 public class Atendente {
 
