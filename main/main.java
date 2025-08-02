@@ -28,7 +28,7 @@ public class Main {
                     break;
                 }
                 case 4:
-                    System.out.println("Saindo da quitanda...\n");
+                    System.out.println("Até a Próxima!\n");
                     break;
                 default:
                     System.out.println("Opção inválida.\n");

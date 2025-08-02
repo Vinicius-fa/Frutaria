@@ -19,6 +19,4 @@ public abstract class Produto {
     public void setPreco(double preco) { this.preco = preco; }
     public void setQuantidade(int quantidade) { this.quantidade = quantidade; }
 
-    @Override
-    public abstract String toString();
 }
