@@ -1,46 +1,39 @@
 package main;
 
-import model.Fruta;
-import model.Verdura;
+import model.Produto;
 import service.Estoque;
 import view.Atendente;
 
 public class Main {
-
     public static void main(String[] args) {
-        Atendente atendente = new Atendente();
         Estoque estoque = new Estoque();
-
+        Atendente atendente = new Atendente();
         int opcao;
 
         do {
             opcao = atendente.menuPrincipal();
-
             switch (opcao) {
-                case 1 -> {
-                    Fruta fruta = atendente.cadastrarFruta();
-                    estoque.adicionarProduto(fruta);
-                    System.out.println("Fruta cadastrada com sucesso!");
+                case 1: {
+                    Produto p = atendente.cadastrarProduto();
+                    estoque.adicionarProduto(p);
+                    break;
                 }
-                case 2 -> {
-                    Verdura verdura = atendente.cadastrarVerdura();
-                    estoque.adicionarProduto(verdura);
-                    System.out.println("Verdura cadastrada com sucesso!");
+                case 2:
+                    estoque.listarProdutos();
+                    break;
+                case 3: {
+                    String nome = atendente.removerProduto();
+                    boolean removido = estoque.removerProduto(nome);
+                    atendente.exibirRemocao(removido, nome);
+                    break;
                 }
-                case 3 -> estoque.listarProdutos();
-                case 4 -> {
-                    String nome = atendente.solicitarNomeParaRemover();
-                    if (estoque.removerProduto(nome)) {
-                        System.out.println("Produto removido com sucesso!");
-                    } else {
-                        System.out.println("Produto não encontrado.");
-                    }
-                }
-                case 5 -> System.out.println("Obrigado por usar o sistema! Até logo.");
-                default -> System.out.println("Opção inválida! Tente novamente.");
+                case 4:
+                    System.out.println("Saindo da quitanda...\n");
+                    break;
+                default:
+                    System.out.println("Opção inválida.\n");
+                    break;
             }
-        } while (opcao != 5);
-
-        atendente.fecharScanner();
+        } while (opcao != 4);
     }
 }

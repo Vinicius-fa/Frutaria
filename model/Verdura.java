@@ -13,6 +13,6 @@ public class Verdura extends Produto {
 
     @Override
     public String toString() {
-        return "Verdura: " + nome + ", Preço: R$" + preco + ", Quantidade: " + quantidade + ", Tipo: " + tipo;
+        return "[VERDURA] " + nome + " - Preço: R$" + preco + ", Quantidade: " + quantidade + ", Tipo: " + tipo;
     }
 }

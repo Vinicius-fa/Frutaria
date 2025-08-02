@@ -1,38 +1,38 @@
 package service;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
-
 import model.Produto;
 
 public class Estoque {
-
-    private List<Produto> produtos;
+    private final List<Produto> produtos;
 
     public Estoque() {
         produtos = new ArrayList<>();
     }
 
-    public void adicionarProduto(Produto produto) {
-        produtos.add(produto);
+    public void adicionarProduto(Produto p) {
+        produtos.add(p);
     }
 
     public void listarProdutos() {
         if (produtos.isEmpty()) {
-            System.out.println("Estoque vazio.");
+            System.out.println("\nNenhum produto cadastrado.\n");
             return;
         }
-        System.out.println("\n===== Lista de Produtos =====");
         for (Produto p : produtos) {
             System.out.println(p);
-            System.out.println("----------------------------");
         }
+        System.out.println("--------------------------------------------------------\n");
     }
 
     public boolean removerProduto(String nome) {
-        for (int i = 0; i < produtos.size(); i++) {
-            if (produtos.get(i).getNome().equalsIgnoreCase(nome)) {
-                produtos.remove(i);
+        Iterator<Produto> it = produtos.iterator();
+        while (it.hasNext()) {
+            Produto p = it.next();
+            if (p.getNome().equalsIgnoreCase(nome)) {
+                it.remove();
                 return true;
             }
         }
