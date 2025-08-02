@@ -40,16 +40,16 @@ public class Atendente {
     
         System.out.print("Preço: ");
         double preco = sc.nextDouble();
-        sc.nextLine();  // limpa buffer
+        sc.nextLine();
     
         System.out.print("Quantidade: ");
         int quantidade = sc.nextInt();
-        sc.nextLine();  // limpa buffer
+        sc.nextLine();
     
         if (tipo.equals("F")) {
             System.out.print("Peso (kg): ");
             double peso = sc.nextDouble();
-            sc.nextLine();  // limpa buffer
+            sc.nextLine();
             return new Fruta(nome, preco, quantidade, peso);
         } else {
             System.out.print("Tipo da verdura: ");
