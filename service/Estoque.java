@@ -31,9 +31,9 @@ public class Estoque {
 
         // Verificação com instanceof
         if (p instanceof Fruta) {
-            System.out.println("🟠 Produto perecível! Armazene em local fresco.");
+            System.out.println("Produto perecível! Armazene em local fresco.");
         } else if (p instanceof Verdura) {
-            System.out.println("🥬 Ideal para consumo no mesmo dia.");
+            System.out.println("Ideal para consumo no mesmo dia.");
         }
 
         System.out.println(); // quebra de linha entre produtos
